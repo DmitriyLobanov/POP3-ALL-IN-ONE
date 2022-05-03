@@ -1,0 +1,49 @@
+%start ClientServiceFSM::NOT_IDENTIFIED
+%class ClientService
+
+%map ClientServiceFSM
+%%
+AUTHENTICATED
+{
+	Delete	AUTHENTICATED	{doDelete(String arg);}
+	List	AUTHENTICATED	{doList(String arg);}
+	Noop	AUTHENTICATED	{doNoop();}
+	Pass	AUTHENTICATED	{ERR();}
+	Retr	AUTHENTICATED	{doRetr(String arg);}
+	Rset	AUTHENTICATED	{doRset();}
+	Stat	AUTHENTICATED	{doStat();}
+	User	AUTHENTICATED	{ERR();}
+	Quit	WAITING_NEW_CONNECTION	{doQuit();}
+}
+
+WAITING_NEW_CONNECTION
+{
+}
+
+NOT_AUTHENTICATED
+{
+	Pass	AUTHENTICATED	{doPass(String pass);}
+	Quit	WAITING_NEW_CONNECTION	{doQuit();}
+	Delete	NOT_AUTHENTICATED	{ERR();}
+	List	NOT_AUTHENTICATED	{ERR();}
+	Noop	NOT_AUTHENTICATED	{ERR();}
+	Retr	NOT_AUTHENTICATED	{ERR();}
+	Rset	NOT_AUTHENTICATED	{ERR();}
+	Stat	NOT_AUTHENTICATED	{ERR();}
+	User	NOT_AUTHENTICATED	{ERR();}
+}
+
+NOT_IDENTIFIED
+{
+	User	NOT_AUTHENTICATED	{doUser(String username);}
+	List	NOT_IDENTIFIED	{ERR();}
+	Stat	NOT_IDENTIFIED	{ERR();}
+	Retr	NOT_IDENTIFIED	{ERR();}
+	Rset	NOT_IDENTIFIED	{ERR();}
+	Noop	NOT_IDENTIFIED	{ERR();}
+	Delete	NOT_IDENTIFIED	{ERR();}
+	Pass	NOT_IDENTIFIED	{ERR();}
+	Quit	WAITING_NEW_CONNECTION	{duQuit();}
+}
+
+%%
