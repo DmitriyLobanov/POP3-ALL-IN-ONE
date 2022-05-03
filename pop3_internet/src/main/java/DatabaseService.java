@@ -24,7 +24,7 @@ public class DatabaseService implements DatabaseServiceInterface {
     private  Connection connection;
     private final String URL = "jdbc:postgresql://localhost:5432/testdb";
     private final String USER = "postgres";
-    private final String PASS = "LEDsa300";
+    private final String PASS = "";
 
     private void loadDatabase() {
         try {
@@ -89,7 +89,9 @@ public class DatabaseService implements DatabaseServiceInterface {
         try {
             Session session = Session.getDefaultInstance(props, null);
             javax.mail.Store store = session.getStore("pop3s");
-            store.connect("pop.yandex.ru", "FulcrumFF@yandex.ru", "Lollop2003");
+            //НЕОБХОДИМО ПОДКЛЮЧИТЬ ПОЧТУ
+            store.connect("pop.yandex.ru", "FulcrumFF@yandex.ru", "");
+            
             Folder folder = store.getFolder("INBOX");
             folder.open(Folder.READ_ONLY);
 
