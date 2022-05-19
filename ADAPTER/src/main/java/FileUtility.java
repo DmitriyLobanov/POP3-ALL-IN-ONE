@@ -20,20 +20,6 @@ public class FileUtility {
     private List<String> outConverted = new ArrayList<>();//ERR - OKK - > asdasd - tolik
     List<String> testReactions = new ArrayList<>();
 
-
-   /* @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        FileUtility that = (FileUtility) o;
-        return Objects.equals(lineFromFile, that.lineFromFile) && Objects.equals(lineFromServer, that.lineFromServer);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(lineFromFile, lineFromServer);
-    }*/
-
     public String getTestSequenceFromFile() {
         return testSequenceFromFile;
     }
@@ -71,6 +57,7 @@ public class FileUtility {
         hashMapERR.put("LIST", "-100");
         hashMapERR.put("RETR", "-1");
         hashMapERR.put("TOP", "-10 0");
+        hashMapERR.put("DELE", "-1");
 
         hashMapOK.put("QUIT", "");
         hashMapOK.put("USER", "tolik");
@@ -80,6 +67,7 @@ public class FileUtility {
         hashMapOK.put("LIST", " ");
         hashMapOK.put("RETR", "1");
         hashMapOK.put("TOP", "1 50");
+        hashMapOK.put("DELE", "1");
 
 
         for (int i = 0; i < inputDataToServerSequence.size(); ++i) {
