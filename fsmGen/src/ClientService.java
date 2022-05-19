@@ -229,7 +229,7 @@ public class ClientService implements Runnable {
 
     public void doDelete(String arg) {
         int tnp = Integer.parseInt(arg);
-        if ((tnp < 0 || tnp >= actualMessages.size()) ) {
+        if (!(tnp < 0 || tnp >= actualMessages.size()) ) {
             toDelete.add(tnp);
             actualMessages.set(tnp, -1);
             toDelete.add(tnp);
