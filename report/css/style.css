@@ -1,0 +1,161 @@
+@import "http://fonts.googleapis.com/css?family=Montserrat:300,400,700";
+
+@page {
+  size: A4;
+  margin: 20mm;
+}
+
+body {
+  padding: 0 2em;
+  font-family: Montserrat, sans-serif;
+  font-size: 11px;
+}
+
+h1 {
+  font-weight: normal;
+  letter-spacing: -1px;
+  color: #34495E;
+  font-size: 16px;
+}
+
+tbody {
+	font-size: 11px;
+}
+
+.modal-body div table  {
+	
+}
+
+.ellipsis {
+	max-width: 100%;
+	word-wrap: break-word;          
+	word-break:break-all; 
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    word-wrap: break-all;
+}
+.main-table {
+  margin: 1em 0;
+  min-width: 300px;
+}
+.main-table tr {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.main-table th {
+  display: none;
+}
+.main-table td {
+  display: block;
+}
+.main-table td:first-child {
+  padding-top: .5em;
+}
+.main-table td:last-child {
+  padding-bottom: .5em;
+}
+.main-table td:before {
+  content: attr(data-th) ": ";
+  font-weight: bold;
+  width: 6.5em;
+  display: inline-block;
+}
+@media (min-width: 480px) {
+  .main-table td:before {
+    display: none;
+  }
+}
+.main-table th, .main-table td {
+  text-align: left;
+}
+@media (min-width: 480px) {
+  .main-table th, .main-table td {
+    display: table-cell;
+    padding: .25em .5em;
+  }
+  .main-table th:first-child, .main-table td:first-child {
+    padding-left: 0;
+  }
+  .main-table th:last-child, .main-table td:last-child {
+    padding-right: 0;
+  }
+}
+
+.main-table {
+  background: #34495E;
+  color: #fff;
+  border-radius: .4em;
+  overflow: hidden;
+}
+.main-table tr {
+  border-color: #46637f;
+}
+.main-table th, .main-table td {
+  margin: .5em 1em;
+}
+@media (min-width: 480px) {
+  .main-table th, .main-table td {
+    padding: 1em !important;
+  }
+}
+.main-table th, .main-table td:before {
+  color: #dd5;
+}
+
+#killcheck td div {
+    height: 20px;
+    width: 20px;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#killcheck th div {
+    font-size: 11px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: normal;
+}
+
+.showHideDescription {
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 50px;
+}
+
+@media print {
+	
+	body { 
+		overflow: hidden;
+		position: relative;
+		box-sizing: border-box;
+		page-break-after: always;
+		font-family: Georgia, 'Times New Roman', serif;
+	}
+	
+	td {
+		word-break:break-all;
+		font: 11px;
+	}
+	
+	th {
+		font: 14px;
+	}
+	
+	.code {
+    	word-wrap: break-word;         
+    	overflow-wrap: break-all;   
+    	word-break:break-all; 
+	}
+	
+	.tab-content > .tab-pane {
+		display: block !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+	}
+	
+}

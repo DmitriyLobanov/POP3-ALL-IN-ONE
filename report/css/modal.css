@@ -1,0 +1,11 @@
+.modal.modal-wide .modal-dialog {
+  width: 90%;
+}
+.modal-wide .modal-body {
+  overflow-y: auto;
+}
+
+.fourcount {
+  width: 500px;
+  column-count: 4;
+}
