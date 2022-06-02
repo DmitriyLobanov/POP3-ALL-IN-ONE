@@ -6,6 +6,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class FileUtility {
+    public ArrayList<String> getReadTestSequence() {
+        return readTestSequence;
+    }
+
     private ArrayList<String> readTestSequence = new ArrayList<>();
     private String testSequenceFromFile = null;
     private String fileName;
@@ -112,8 +116,8 @@ public class FileUtility {
         String str;
         for (int i = 0; i < temp.size(); ++i) {
             str = temp.get(i);
-            if (!str.contains("RES")) {
-                str = str.split("\\w*\\/")[1];
+            if (!str.contains("RES") && !str.equals("")) {
+                str = str.split("\\w*/")[1];
                 testReactions.add(str);
             } else {
                 testReactions.add("");
